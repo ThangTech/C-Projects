@@ -41,6 +41,8 @@
     </Reference>
     <Reference Include="Syncfusion.Core.WinForms, Version=29.1462.33.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Data.WinForms, Version=29.1462.33.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Diagram.Base, Version=29.1462.33.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Diagram.Windows, Version=29.1462.33.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Grid.Base, Version=29.1462.33.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Grid.Windows, Version=29.1462.33.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.GridCommon.WinForms, Version=29.1462.33.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
@@ -81,6 +83,18 @@
     <Compile Include="FormTest.Designer.cs">
       <DependentUpon>FormTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_Nation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Nation.Designer.cs">
+      <DependentUpon>GUI_Nation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Religion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Religion.Designer.cs">
+      <DependentUpon>GUI_Religion.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +105,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Nation.resx">
+      <DependentUpon>GUI_Nation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Religion.resx">
+      <DependentUpon>GUI_Religion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
