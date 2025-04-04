@@ -40,6 +40,13 @@
     <Property Name="MaCV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenCV" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="Dantoc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenDT" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="HopDong">
     <Key>
       <PropertyRef Name="SoHD" />
@@ -97,6 +104,8 @@
     <Property Name="MaBP" Type="int" />
     <Property Name="MaCV" Type="int" />
     <Property Name="MaTD" Type="int" />
+    <Property Name="MaDT" Type="int" />
+    <Property Name="MaTG" Type="int" />
   </EntityType>
   <EntityType Name="NhanVien_PhuCap">
     <Key>
@@ -145,6 +154,13 @@
     <Property Name="SoGio" Type="float" />
     <Property Name="MaNV" Type="int" />
     <Property Name="MaLoaiCa" Type="int" />
+  </EntityType>
+  <EntityType Name="Tongiao">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenTG" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="TrinhDo">
     <Key>
@@ -338,6 +354,7 @@
     <EntitySet Name="BoPhan" EntityType="Self.BoPhan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ChamCong" EntityType="Self.ChamCong" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ChucVu" EntityType="Self.ChucVu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dantoc" EntityType="Self.Dantoc" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HopDong" EntityType="Self.HopDong" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KhenThuong_KyLuat" EntityType="Self.KhenThuong_KyLuat" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LoaiCa" EntityType="Self.LoaiCa" Schema="dbo" store:Type="Tables" />
@@ -348,6 +365,7 @@
     <EntitySet Name="PhuCap" EntityType="Self.PhuCap" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TangCa" EntityType="Self.TangCa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tongiao" EntityType="Self.Tongiao" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TrinhDo" EntityType="Self.TrinhDo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UngLuong" EntityType="Self.UngLuong" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_BaoHiem_NhanVien" Association="Self.FK_BaoHiem_NhanVien">

@@ -117,6 +117,8 @@
     <NavigationProperty Name="TrinhDo" Relationship="Self.FK_NhanVien_TrinhDo" FromRole="NhanVien" ToRole="TrinhDo" />
     <NavigationProperty Name="TangCas" Relationship="Self.FK_TangCa_NhanVien" FromRole="NhanVien" ToRole="TangCa" />
     <NavigationProperty Name="UngLuongs" Relationship="Self.FK_UngLuong_NhanVien" FromRole="NhanVien" ToRole="UngLuong" />
+    <Property Name="MaDT" Type="Int32" />
+    <Property Name="MaTG" Type="Int32" />
   </EntityType>
   <EntityType Name="NhanVien_PhuCap">
     <Key>
@@ -434,5 +436,21 @@
       <End Role="PhuCap" EntitySet="PhuCaps" />
       <End Role="NhanVien_PhuCap" EntitySet="NhanVien_PhuCap" />
     </AssociationSet>
+    <EntitySet Name="Dantocs" EntityType="QLNhanSuModel.Dantoc" />
+    <EntitySet Name="Tongiaos" EntityType="QLNhanSuModel.Tongiao" />
   </EntityContainer>
+  <EntityType Name="Dantoc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tongiao">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenTG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

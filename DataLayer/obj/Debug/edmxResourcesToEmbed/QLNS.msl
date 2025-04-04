@@ -93,6 +93,8 @@
     <EntitySetMapping Name="NhanViens">
       <EntityTypeMapping TypeName="QLNhanSuModel.NhanVien">
         <MappingFragment StoreEntitySet="NhanVien">
+          <ScalarProperty Name="MaTG" ColumnName="MaTG" />
+          <ScalarProperty Name="MaDT" ColumnName="MaDT" />
           <ScalarProperty Name="MaNV" ColumnName="MaNV" />
           <ScalarProperty Name="TenNV" ColumnName="TenNV" />
           <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
@@ -179,6 +181,22 @@
           <ScalarProperty Name="SoTien" ColumnName="SoTien" />
           <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
           <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dantocs">
+      <EntityTypeMapping TypeName="QLNhanSuModel.Dantoc">
+        <MappingFragment StoreEntitySet="Dantoc">
+          <ScalarProperty Name="TenDT" ColumnName="TenDT" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tongiaos">
+      <EntityTypeMapping TypeName="QLNhanSuModel.Tongiao">
+        <MappingFragment StoreEntitySet="Tongiao">
+          <ScalarProperty Name="TenTG" ColumnName="TenTG" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

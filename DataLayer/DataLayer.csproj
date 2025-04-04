@@ -62,6 +62,9 @@
     <Compile Include="ChucVu.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dantoc.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
     <Compile Include="HopDong.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
@@ -106,6 +109,9 @@
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
     <Compile Include="TangCa.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tongiao.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
     <Compile Include="TrinhDo.cs">

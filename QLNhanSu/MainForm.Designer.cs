@@ -59,6 +59,7 @@ namespace QLNhanSu
             this.toolStripBangcong = new System.Windows.Forms.ToolStripButton();
             this.toolStripBangluong = new System.Windows.Forms.ToolStripButton();
             this.toolStripBaocao = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv1)).BeginInit();
             this.ribbonControlAdv1.SuspendLayout();
             this.toolStripHethong.Panel.SuspendLayout();
@@ -68,6 +69,7 @@ namespace QLNhanSu
             this.toolStripEx2.SuspendLayout();
             this.toolStripChamcong.Panel.SuspendLayout();
             this.toolStripEx4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControlAdv1
@@ -97,7 +99,7 @@ namespace QLNhanSu
             this.ribbonControlAdv1.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ribbonControlAdv1.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.ribbonControlAdv1.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2010;
-            this.ribbonControlAdv1.SelectedTab = this.toolStripHethong;
+            this.ribbonControlAdv1.SelectedTab = this.toolStripNhansu;
             this.ribbonControlAdv1.ShowRibbonDisplayOptionButton = true;
             this.ribbonControlAdv1.Size = new System.Drawing.Size(1082, 139);
             this.ribbonControlAdv1.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -439,11 +441,22 @@ namespace QLNhanSu
             this.toolStripBaocao.Tag = "1";
             this.toolStripBaocao.Text = "Report";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 141);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1082, 533);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 673);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ribbonControlAdv1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
@@ -467,6 +480,7 @@ namespace QLNhanSu
             this.toolStripChamcong.Panel.PerformLayout();
             this.toolStripEx4.ResumeLayout(false);
             this.toolStripEx4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -502,6 +516,7 @@ namespace QLNhanSu
         private System.Windows.Forms.ToolStripButton toolStripSaoluu;
         private System.Windows.Forms.ToolStripButton toolStripPhuchoi;
         private System.Windows.Forms.ToolStripButton toolStripThoat;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

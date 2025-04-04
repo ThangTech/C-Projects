@@ -35,6 +35,8 @@
         <AssociationConnector Association="QLNhanSuModel.FK_TangCa_NhanVien" ManuallyRouted="false" />
         <AssociationConnector Association="QLNhanSuModel.FK_UngLuong_NhanVien" ManuallyRouted="false" />
         <AssociationConnector Association="QLNhanSuModel.FK_NhanVien_PhuCap_PhuCap" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QLNhanSuModel.Dantoc" Width="1.5" PointX="3.75" PointY="2.5" />
+        <EntityTypeShape EntityType="QLNhanSuModel.Tongiao" Width="1.5" PointX="0.75" PointY="5.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

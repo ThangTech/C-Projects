@@ -41,5 +41,7 @@ namespace DataLayer
         public virtual DbSet<TangCa> TangCas { get; set; }
         public virtual DbSet<TrinhDo> TrinhDoes { get; set; }
         public virtual DbSet<UngLuong> UngLuongs { get; set; }
+        public virtual DbSet<Dantoc> Dantocs { get; set; }
+        public virtual DbSet<Tongiao> Tongiaos { get; set; }
     }
 }

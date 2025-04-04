@@ -38,6 +38,8 @@ namespace DataLayer
         public Nullable<int> MaBP { get; set; }
         public Nullable<int> MaCV { get; set; }
         public Nullable<int> MaTD { get; set; }
+        public Nullable<int> MaDT { get; set; }
+        public Nullable<int> MaTG { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BaoHiem> BaoHiems { get; set; }

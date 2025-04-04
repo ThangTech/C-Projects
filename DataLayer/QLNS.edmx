@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QLNhanSuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QLNhanSuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BaoHiem">
           <Key>
             <PropertyRef Name="MaBH" />
@@ -44,6 +44,13 @@
           </Key>
           <Property Name="MaCV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenCV" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Dantoc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenDT" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="HopDong">
           <Key>
@@ -102,6 +109,8 @@
           <Property Name="MaBP" Type="int" />
           <Property Name="MaCV" Type="int" />
           <Property Name="MaTD" Type="int" />
+          <Property Name="MaDT" Type="int" />
+          <Property Name="MaTG" Type="int" />
         </EntityType>
         <EntityType Name="NhanVien_PhuCap">
           <Key>
@@ -150,6 +159,13 @@
           <Property Name="SoGio" Type="float" />
           <Property Name="MaNV" Type="int" />
           <Property Name="MaLoaiCa" Type="int" />
+        </EntityType>
+        <EntityType Name="Tongiao">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenTG" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TrinhDo">
           <Key>
@@ -343,6 +359,7 @@
           <EntitySet Name="BoPhan" EntityType="Self.BoPhan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChamCong" EntityType="Self.ChamCong" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChucVu" EntityType="Self.ChucVu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dantoc" EntityType="Self.Dantoc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HopDong" EntityType="Self.HopDong" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KhenThuong_KyLuat" EntityType="Self.KhenThuong_KyLuat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LoaiCa" EntityType="Self.LoaiCa" Schema="dbo" store:Type="Tables" />
@@ -353,6 +370,7 @@
           <EntitySet Name="PhuCap" EntityType="Self.PhuCap" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TangCa" EntityType="Self.TangCa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tongiao" EntityType="Self.Tongiao" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TrinhDo" EntityType="Self.TrinhDo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UngLuong" EntityType="Self.UngLuong" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_BaoHiem_NhanVien" Association="Self.FK_BaoHiem_NhanVien">
@@ -412,8 +430,7 @@
             <End Role="UngLuong" EntitySet="UngLuong" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QLNhanSuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -534,6 +551,8 @@
           <NavigationProperty Name="TrinhDo" Relationship="Self.FK_NhanVien_TrinhDo" FromRole="NhanVien" ToRole="TrinhDo" />
           <NavigationProperty Name="TangCas" Relationship="Self.FK_TangCa_NhanVien" FromRole="NhanVien" ToRole="TangCa" />
           <NavigationProperty Name="UngLuongs" Relationship="Self.FK_UngLuong_NhanVien" FromRole="NhanVien" ToRole="UngLuong" />
+          <Property Name="MaDT" Type="Int32" />
+          <Property Name="MaTG" Type="Int32" />
         </EntityType>
         <EntityType Name="NhanVien_PhuCap">
           <Key>
@@ -851,7 +870,23 @@
             <End Role="PhuCap" EntitySet="PhuCaps" />
             <End Role="NhanVien_PhuCap" EntitySet="NhanVien_PhuCap" />
           </AssociationSet>
+          <EntitySet Name="Dantocs" EntityType="QLNhanSuModel.Dantoc" />
+          <EntitySet Name="Tongiaos" EntityType="QLNhanSuModel.Tongiao" />
         </EntityContainer>
+        <EntityType Name="Dantoc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tongiao">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenTG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -950,6 +985,8 @@
           <EntitySetMapping Name="NhanViens">
             <EntityTypeMapping TypeName="QLNhanSuModel.NhanVien">
               <MappingFragment StoreEntitySet="NhanVien">
+                <ScalarProperty Name="MaTG" ColumnName="MaTG" />
+                <ScalarProperty Name="MaDT" ColumnName="MaDT" />
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
                 <ScalarProperty Name="TenNV" ColumnName="TenNV" />
                 <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
@@ -1036,6 +1073,22 @@
                 <ScalarProperty Name="SoTien" ColumnName="SoTien" />
                 <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dantocs">
+            <EntityTypeMapping TypeName="QLNhanSuModel.Dantoc">
+              <MappingFragment StoreEntitySet="Dantoc">
+                <ScalarProperty Name="TenDT" ColumnName="TenDT" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tongiaos">
+            <EntityTypeMapping TypeName="QLNhanSuModel.Tongiao">
+              <MappingFragment StoreEntitySet="Tongiao">
+                <ScalarProperty Name="TenTG" ColumnName="TenTG" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
